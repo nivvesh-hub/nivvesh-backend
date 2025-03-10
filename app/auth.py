@@ -3,9 +3,9 @@ from typing import Optional
 from jose import jwt, JWTError
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-from db.connection import get_db
+from app.db.connection import get_db
 from sqlalchemy.orm import Session
-from app.models import User
+from app.models.users import User
 from app.config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/users/login")

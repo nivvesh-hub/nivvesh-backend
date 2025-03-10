@@ -1,4 +1,5 @@
 from pydantic import BaseModel, constr, conint
+from sqlalchemy.orm import relationship
 
 class UserCreate(BaseModel):
     first_name: constr(min_length=1, max_length=50)
@@ -8,3 +9,4 @@ class UserCreate(BaseModel):
 
     class Config:
         orm_mode = True
+
